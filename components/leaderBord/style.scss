@@ -1,0 +1,54 @@
+.leader-bord {
+    background-color: #000;
+    color: white;
+    background-image:  url("../../public/images/2.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    .chart {
+        padding: 3rem;
+
+        .chart-content {
+            margin: auto;
+            border: 2px solid #dc2727;
+            border-radius: 0.3rem;
+            box-shadow: rgb(20, 30, 41) 0px 20px 30px -10px;
+            .chart-head {
+                color: #dc2727;
+                display: flex;
+                justify-content: space-between;
+                font-weight: 900;
+                padding: 1rem;
+                border-bottom: 2px solid #dc2727;
+                font-size: 1.2rem;
+                align-items: center;
+            }
+            .player-list{
+                .each-player{
+                    display: grid;
+                    grid-template-columns: 4rem 0.5fr 1fr 1fr 1fr;
+                    padding: 1rem 0;
+                    align-items: center;
+                    text-align: center;
+                    &:nth-child(even){
+                        background-color: #02000082;
+                    }
+                    &:nth-child(odd){
+                        background-color:rgba(1, 1, 1, 0.822);
+                    }
+                    .img{
+                        width: 3rem;
+                        height: auto;
+                        margin: auto;
+                    }
+                    .score{
+                        font-size: 1.3rem;
+                        font-weight: 900;
+                    }
+                }
+                .each-player-list{
+                    padding: 0.7rem 0;
+                }
+            }
+        }
+    }
+}

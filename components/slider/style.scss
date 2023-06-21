@@ -1,0 +1,110 @@
+.slider-container{
+    padding: 1rem;
+    overflow: hidden;
+    position: relative;
+    background-color: #000000af;
+
+    .show-all{
+        width: max-content;
+        transition: 0.5s;
+    }
+    .arrow-left,.arrow-rigth{
+        position: absolute;
+        z-index: 10;
+        height: 81%;
+        top: 10%;
+        padding: 0 .5rem;
+        background-color: #31313142;
+        display: grid;
+        align-items: center;
+        color: #dc2727;
+        font-size: 1.5rem ;
+        transition: 0.3s;
+        &:hover{
+            background-color:#1c1c1ca4 ;
+        }
+    }
+    .arrow-left{
+        left: 0;
+    }
+    .arrow-rigth{
+        right: 2rem;
+    }
+    .each-slide{
+        float: left;
+        width: 25rem;
+        height: 15rem;
+        display: grid;
+        box-shadow: rgba(134, 134, 134, 0.24) 0px 3px 8px;
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        margin: 1rem;
+        .slide-image{
+            display: grid;
+            height: 100%;
+            place-items: center;
+            position: relative;
+            .img{
+                width: 12rem;
+                height: auto;
+                position: absolute;
+                z-index: 2;
+            }
+            &::after{
+                position: absolute;
+                content: "";
+                width: 10rem;
+                height:10rem;
+                background-color: #dc2727;
+                z-index: 0;
+                border-radius: 50%;
+            }
+        }
+        .slide-info{
+            direction: ltr;
+            .title{
+                color: #dc2727;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            .info{
+                line-height: 2rem;
+                font-size: 1.2rem;
+            }
+            .price{
+                color: #dc2727;
+                font-size: 1.7rem;
+                font-weight: 900;
+                margin: 1rem 0;
+            }
+            .buttons{
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                align-items: center;
+                .add-to-cart{
+                    background-color: #dc2727;
+                    width: max-content;
+                    padding: 0.5rem;
+                    border-radius: 0.3rem;
+                }
+                .open-avatar{
+                    padding: 0.5rem;
+                    border: 2px solid #dc2727;
+                    border-radius: 0.3rem;
+                }
+            }
+        }
+        @media(max-width: 600px){
+            margin: 0;
+            width: 16rem;
+            grid-template-columns: 1fr;
+            height: max-content;
+            .slide-image{
+                .img{
+                    position: relative;
+                }
+            }
+        }
+    }
+}

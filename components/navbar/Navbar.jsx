@@ -1,0 +1,55 @@
+"use client"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faUser,
+    faBars
+} from "@fortawesome/free-solid-svg-icons";
+import style from "./style.module.scss"
+import "./style.scss"
+import { useContext, useEffect, useState } from "react";
+import { Context } from "@container/Context";
+const Navbar = () => {
+    const [token, setToken] = useState(null)
+    const context=useContext(Context)
+    useEffect(()=>{
+        const token=localStorage.getItem("token")
+        if(token)setToken(token)
+    },[context.navUpdater])
+
+    const toggle_nav=()=>{
+        document.querySelector(".navbar").classList.toggle("nav-active")
+    }
+    return (
+        <body>
+            <nav className={`navbar ${style.nav} `}>
+                <div className="content container">
+                    <div className="rigth">
+                        <ul onClick={toggle_nav}>
+                            <li className="toggle-nav" >
+                            <FontAwesomeIcon
+                                icon={faBars}
+                                style={{ fontSize: "1.3rem", color: "#fff" }}
+                            />
+                            </li>
+                            <li>صفحه اصلی</li>
+                            <li>فروشگاه</li>
+                            <li>درباره ما</li>
+                        </ul>
+                    </div>
+                    <div className="left">
+                        {token ?
+                            <FontAwesomeIcon
+                                icon={faUser}
+                                style={{ fontSize: "1rem", color: "#fff" }}
+                            />
+                            :
+                            <div>ورود / ثبت نام</div>
+                        }
+                    </div>
+                </div>
+            </nav>
+        </body>
+    );
+}
+
+export default Navbar;

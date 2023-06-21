@@ -1,0 +1,46 @@
+.navbar {
+    overflow: hidden;
+    transition: 0.3s;
+    border-bottom: 1px solid gray;
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .rigth ul {
+            display: flex;
+            align-items: center;
+
+            li {
+                padding:   1rem;
+            }
+
+            .toggle-nav {
+                display: none;
+            }
+        }
+    }
+
+    @media(max-width: 600px) {
+        .content {
+            display: block;
+
+            .rigth ul {
+                display: block;
+
+                li {
+                    padding:0.8rem 0.2rem ;
+                }
+               
+                .toggle-nav {
+                    display: block;
+                }
+            }
+            .left{
+                padding: 0.8rem 0.2rem;
+            }
+        }
+    }
+}
+.nav-active {
+    max-height: 20rem !important;
+ }

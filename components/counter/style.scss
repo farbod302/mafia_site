@@ -1,0 +1,39 @@
+.counter{
+    background-color: #000;
+    height: 30rem;
+    color: white;
+    border-bottom: 2px solid #dc2727;
+    .title{
+        text-align: center;
+        color: #dc2727;
+        font-size: 2rem;
+        padding: 1.5rem;
+        font-weight: 900;
+    }
+    .revolver{
+        display: grid;
+        justify-content: center;
+        .img{
+            width: 7rem;
+
+        
+        }
+    }
+    .content{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        height: 100%;
+        .counter-icon{
+            margin: 2rem ;
+        }
+        .counter-num{
+            font-size: 2rem;
+            margin: 2rem 0;
+            font-weight: 900;
+        }
+        .counter-title{
+            font-size: 1.5rem;
+        }
+    }
+}

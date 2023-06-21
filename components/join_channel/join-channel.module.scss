@@ -1,0 +1,24 @@
+.main{
+    background-color: #000;
+    min-height: calc( 100vh - 3rem);
+    display: grid;
+    align-items: center;
+    
+}
+
+.container{
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    color: white;
+    height:calc(100vh - 5rem);
+    background-color: #1F1B20;
+    overflow: auto;
+    border-radius: 0.5rem;
+    box-shadow: rgba(170, 170, 170, 0.419) 0px 3px 8px;
+}
+    
+.content{
+    width: 95%;
+    margin: auto;
+}
