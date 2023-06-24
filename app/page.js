@@ -1,3 +1,4 @@
+import Advanteg from "@components/advanteg/Advanteg";
 import Counter from "@components/counter/Counter";
 import LandPage from "@components/landPage/LandPage";
 import LeaderBord from "@components/leaderBord/LeaderBord";
@@ -17,6 +18,7 @@ const Page =async () => {
        <div>
         <LandPage />
         <Counter counter_data={counter_data}/>
+        <Advanteg/>
         <ShopSlider/>
         <LeaderBord/>
        </div>

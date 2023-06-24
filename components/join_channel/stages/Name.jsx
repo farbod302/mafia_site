@@ -1,14 +1,16 @@
 "use client"
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const Name = ({setStage}) => {
+const Name = ({setStage,redirect}) => {
     
     const [loade,setLoade]=useState(false)
-
+    const router=useRouter()
     const regist=(e)=>{
         e.preventDefault()
         setLoade(true)
+        if(redirect){return router.push("/")}
         setStage(prv=>prv+1)
     }
 

@@ -1,0 +1,64 @@
+.advanteg {
+    background-color: #000;
+    color: white;
+    border-bottom: 2px solid #dc2727;
+
+    .title {
+        text-align: center;
+        font-size: 2rem;
+        padding: 1rem;
+        color: #dc2727;
+        font-weight: 900;
+    }
+
+    .content {
+        min-height: 40rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 5rem 2rem;
+        margin: 3rem auto;
+
+        .main-image {
+            grid-row: 1/4;
+            grid-column: 2/3;
+            position: relative;
+            display: grid;
+            border: 2px solid #dc2727;
+            place-items: center;
+           
+
+        }
+
+        .advanteg-text {
+            cursor: pointer;
+            .label {
+                font-size: 1.5rem;
+                color: #dc2727;
+                margin-bottom: 0.5rem;
+            }
+
+            line-height: 2rem;
+            transition: 0.5s;
+            .info{
+                padding-bottom:1rem;
+            }
+        }
+
+        .active-text {
+            .info {
+                border-bottom: 2px solid #dc2727;
+                font-size: 1.2rem;
+                font-weight: 800;
+            }
+            .label{
+                font-weight: 800;
+            }
+            transform: scale(1.1, 1.1);
+        }
+
+        .left {
+            direction: ltr;
+        }
+    }
+}

@@ -10,13 +10,24 @@ import { useContext, useEffect, useState } from "react";
 import { Context } from "@container/Context";
 const Navbar = () => {
     const [token, setToken] = useState(null)
-    const context=useContext(Context)
-    useEffect(()=>{
-        const token=localStorage.getItem("token")
-        if(token)setToken(token)
-    },[context.navUpdater])
+    const context = useContext(Context)
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        if (token) setToken(token)
+    }, [context.navUpdater])
 
-    const toggle_nav=()=>{
+
+    useEffect(() => {
+        let window_w = window.outerWidth
+        if(window_w<600)return  
+        let key = 120
+        let font_size = window_w / key
+        document.querySelector("html").style.fontSize=font_size+"px"
+    }, [])
+
+    
+
+    const toggle_nav = () => {
         document.querySelector(".navbar").classList.toggle("nav-active")
     }
     return (
@@ -26,10 +37,10 @@ const Navbar = () => {
                     <div className="rigth">
                         <ul onClick={toggle_nav}>
                             <li className="toggle-nav" >
-                            <FontAwesomeIcon
-                                icon={faBars}
-                                style={{ fontSize: "1.3rem", color: "#fff" }}
-                            />
+                                <FontAwesomeIcon
+                                    icon={faBars}
+                                    style={{ fontSize: "1.3rem", color: "#fff" }}
+                                />
                             </li>
                             <li>صفحه اصلی</li>
                             <li>فروشگاه</li>
