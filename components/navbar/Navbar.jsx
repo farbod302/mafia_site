@@ -1,21 +1,32 @@
 "use client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faUser,
-    faBars
+    faBars,
+    faShoppingCart,
+    faCoins
 } from "@fortawesome/free-solid-svg-icons";
 import style from "./style.module.scss"
 import "./style.scss"
 import { useContext, useEffect, useState } from "react";
 import { Context } from "@container/Context";
 import SelectedItem from "@components/selected-item/SelectedItem";
+import Helper from "@container/helper";
+import { useRouter } from "next/navigation";
 const Navbar = () => {
-    const [token, setToken] = useState(null)
+
+    const router = useRouter()
+    const [profile, setProfile] = useState(null)
     const context = useContext(Context)
     useEffect(() => {
         const token = localStorage.getItem("token")
-        if (token) setToken(token)
+        fetch_profile(token)
     }, [context.navUpdater])
+
+    const fetch_profile = async (token) => {
+        if (!token) return
+        const { data } = await Helper.server_post_request("user/land_screen_data", { token })
+        setProfile(data)
+    }
 
 
     useEffect(() => {
@@ -51,17 +62,35 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="left">
-                        {token ?
-                            <FontAwesomeIcon
-                                icon={faUser}
-                                style={{ fontSize: "1rem", color: "#fff" }}
-                            />
+                        {profile ?
+                            <div className="nav-info">
+
+
+                                <div className="coin" onClick={() => router.push("/gold")}>
+                                    {profile.gold} MVC   <FontAwesomeIcon
+                                        icon={faCoins}
+                                        style={{ fontSize: "1.3rem", color: "#d44848" }}
+                                    />
+                                </div>
+
+                                <div className="cart">
+                                    <FontAwesomeIcon
+                                        icon={faShoppingCart}
+                                        style={{ fontSize: "1.3rem", color: "#fff" }}
+                                    />
+                                    <div className="cart_count">
+                                        0
+                                    </div>
+                                </div>
+
+
+                            </div>
                             :
                             <div>ورود / ثبت نام</div>
                         }
                     </div>
                 </div>
-               {context.item ?  <SelectedItem />:null}
+                {context.item ? <SelectedItem /> : null}
 
             </nav>
         </body>

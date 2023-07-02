@@ -1,0 +1,36 @@
+.admin-log-in{
+    color: white;
+    min-height: calc(100vh - 3rem);
+    background-color: #000;
+    display: grid;
+    place-items: center;
+    .content{
+        width: 30rem;
+        height: 15rem;
+        background-color: #1f1b20;
+        border-radius: 0.4rem;
+        display: grid;
+        .label{
+            text-align: center;
+            padding: 1rem;
+            color: #dc2727;
+            font-size: 2rem;
+        }
+        .input{
+            text-align: center;
+            input{
+                font-size: 1.5rem;
+                direction: ltr;
+            }
+        }
+        .button{
+            text-align: center;
+            button{
+                font-size: 1.3rem;
+            }
+        }
+        @media(max-width: 600px){
+            width: 98%;
+        }
+    }
+}

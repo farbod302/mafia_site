@@ -1,5 +1,12 @@
+"use client"
+import { useState } from "react";
 import "./style.scss"
+import Helper from "@container/helper";
 const Gold = () => {
+
+
+
+  
     return ( 
         <div className="gold">
             <div className="content ">
@@ -11,7 +18,7 @@ const Gold = () => {
                 </div>
                 <div className="items-list ">
                     <div className="content container">
-                        hi
+                        
                     </div>
                 </div>
             </div>

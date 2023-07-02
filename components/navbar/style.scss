@@ -18,6 +18,7 @@
                 display: none;
             }
         }
+        
     }
 
     @media(max-width: 600px) {
@@ -37,6 +38,34 @@
             }
             .left{
                 padding: 0.8rem 0.2rem;
+            }
+        }
+    }
+    .nav-info{
+        display: flex;
+        column-gap: 2rem;
+        align-items: center;
+        direction: ltr;
+        .coin{
+            color: #e46666;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .cart{
+            position: relative;
+            .cart_count{
+                position: absolute;
+                bottom: 0px;
+                background-color: #d44848;
+                width: 1rem;
+                height: 1rem;
+                display: grid;
+                place-items: center;
+                border-radius: 50%;
+                right: -1rem;
+                padding: 1px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-weight: 700;
             }
         }
     }
