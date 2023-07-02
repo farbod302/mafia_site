@@ -3,7 +3,8 @@ import { faArrowLeft, faArrowRight, faShoppingCart } from "@fortawesome/free-sol
 import "./style.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import { Context } from "@container/Context";
 
 const Slider = () => {
 
@@ -24,6 +25,7 @@ const Slider = () => {
         setSlider(prv=>prv+side)
     }
 
+    const context=useContext(Context)
   
     return (
         <div>
@@ -70,7 +72,7 @@ const Slider = () => {
                                             icon={faShoppingCart}
                                         />
                                     </div>
-                                    <div className="open-avatar">
+                                    <div className="open-avatar" onClick={()=>{context.setItem(2)}}>
                                         مشاهده محصول
                                     </div>
                                 </div>

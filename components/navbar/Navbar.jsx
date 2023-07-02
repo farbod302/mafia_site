@@ -8,6 +8,7 @@ import style from "./style.module.scss"
 import "./style.scss"
 import { useContext, useEffect, useState } from "react";
 import { Context } from "@container/Context";
+import SelectedItem from "@components/selected-item/SelectedItem";
 const Navbar = () => {
     const [token, setToken] = useState(null)
     const context = useContext(Context)
@@ -19,13 +20,15 @@ const Navbar = () => {
 
     useEffect(() => {
         let window_w = window.outerWidth
-        if(window_w<600)return  
+        if (window_w < 600) return
         let key = 120
         let font_size = window_w / key
-        document.querySelector("html").style.fontSize=font_size+"px"
+        document.querySelector("html").style.fontSize = font_size + "px"
     }, [])
 
-    
+
+
+
 
     const toggle_nav = () => {
         document.querySelector(".navbar").classList.toggle("nav-active")
@@ -58,6 +61,8 @@ const Navbar = () => {
                         }
                     </div>
                 </div>
+               {context.item ?  <SelectedItem />:null}
+
             </nav>
         </body>
     );
