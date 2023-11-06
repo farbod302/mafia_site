@@ -1,0 +1,108 @@
+.admin {
+    min-height: calc(100vh - 3rem);
+    background-color: #000;
+    color: white;
+
+    .admin-nav {
+        ul {
+            display: flex;
+            padding: 2rem 0;
+            column-gap: 2rem;
+        }
+        li{
+            cursor: pointer;
+        }
+        .active-nav {
+            color: #dc2727;
+        }
+    }
+}
+
+//add item
+
+.form-input{
+    margin: 1rem 0;
+    .label{
+        font-size: 1.2rem;
+        padding: 1rem 0;
+        color: #dc2727;
+        input{
+            margin-left: 1rem;
+        }
+    }
+    .input-self{
+        input,select,textarea{
+            background: none;
+            border: none;
+            border-bottom: 1px solid #dc2727b7;
+            color: white;
+            width: 20rem;
+            font-size: 1.2rem;
+            &:focus{
+                border-bottom: 2px solid #dc2727;
+                outline: none;
+            }
+        }
+        textarea{
+            resize: none;
+        }
+        select{
+           option{
+            color: #000;
+           }
+        }
+        .each-category{
+            display: grid;
+            grid-template-columns: 2rem 1fr;
+            line-height: 2rem;
+            font-size: 1.2rem;
+            input{
+                width: max-content;
+            }
+        }
+    }
+}
+
+
+.tabel{
+    .tabel-head{
+        padding: 1rem 0;
+        color: #dc2727;
+        font-size: 1.5;
+        font-weight: 700;
+        border-bottom: 2px solid #dc2727;
+    }
+    .tabel-self{
+      .each-tabel{
+        display: grid;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid #dc272774;
+        .img{
+            width: 50%;
+            margin: auto;
+            img{
+                width: 100%;
+            }
+        }
+      }
+    }
+}
+
+.add-item{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    
+}
+
+
+// tr list
+
+.tr_list{
+    li{
+        display: grid;
+        grid-template-columns: 3rem repeat(5,1fr);
+        padding: 1rem;
+        border-bottom: 1px solid gray;
+    }
+}

@@ -10,6 +10,7 @@
         display: grid;
         align-items: center;
         height: 50rem;
+
         .main-content {
             height: 37rem;
             width: 50%;
@@ -30,6 +31,7 @@
         .list {
             font-size: 1.3rem;
             line-height: 3rem;
+
             li::before {
                 content: "\2022";
                 color: #dc2727;
@@ -40,12 +42,15 @@
                 font-size: 1.5rem;
             }
         }
-        .downlod-tip{
+
+        .downlod-tip {
             color: rgb(201, 201, 201);
         }
-        .download-box{
+
+        .download-box {
             display: flex;
-            .each-download{
+
+            .each-download {
                 margin-left: 3rem;
                 border: 2px solid #dc2727;
                 height: max-content;
@@ -54,13 +59,16 @@
                 display: flex;
                 transition: 0.3s;
                 cursor: pointer;
-                .icon{
+
+                .icon {
                     padding-left: 1rem;
                 }
-                &:hover{
+
+                &:hover {
                     background-color: #dc2727;
                     color: white;
-                    svg{
+
+                    svg {
                         color: white !important;
                     }
                 }
@@ -68,16 +76,43 @@
         }
     }
 
-    // @media(max-width: 1400px) {
-    //     min-height: 35rem;
+    @media(max-width: 500px) {
+        background-size: 300% 100%;
+        min-height: unset;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../public/images/lp.png');
 
-    //     .content {
-    //         height: 35rem;
+        .content {
+            height: max-content;
 
-    //         .main-content {
-    //             height: 33rem;
-    //         }
-    //     }
+            .title {
+                font-size: 2rem;
+            }
 
-    // }
+            .sub-title {
+                font-size: 1rem;
+                margin: 1rem 0;
+            }
+
+            .main-content {
+                height: max-content;
+                width: 90%;
+                padding: 2rem 1rem;
+                line-height: 2rem;
+
+                .list {
+                    font-size: 1rem;
+                }
+            }
+
+            .download-box {
+                margin: 1rem 0;
+
+                .each-download {
+                    margin-left: 0.3rem;
+                    padding: 0.2rem 0.4rem;
+                }
+            }
+        }
+
+    }
 }

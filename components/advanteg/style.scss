@@ -61,4 +61,29 @@
             direction: ltr;
         }
     }
+    @media(max-width: 500px){
+        .title{
+            font-size: 1.4rem;
+        }
+        .content{
+            grid-template-columns: 1fr;
+            grid-template-columns: 1fr;
+            min-height: unset;
+            .main-image{
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+            grid-gap: 1rem;
+
+        }
+        .left{
+            direction: rtl !important;
+        }
+        .active-text{
+            transform: scale(1,1) !important;
+           .info{
+            font-weight: 100 !important;
+           }
+        }
+    }
 }

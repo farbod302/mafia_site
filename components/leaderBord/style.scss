@@ -51,4 +51,13 @@
             }
         }
     }
+    @media(max-width: 500px){
+        .chart{
+            padding: 1rem;
+            font-size: 0.8rem;
+            *{
+                font-size: 0.8rem !important;
+            }
+        }
+    }
 }

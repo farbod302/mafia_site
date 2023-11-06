@@ -59,7 +59,7 @@ const Counter = ({ counter_data }) => {
                             <div className="counter-icon">
                                 <FontAwesomeIcon
                                     icon={title.icon}
-                                    style={{ fontSize: "3.3rem", color: "#dc2727" }}
+                                    style={{color: "#dc2727" }}
                                 />
                             </div>
                             <div className="counter-num">

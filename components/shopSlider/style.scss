@@ -32,4 +32,11 @@
             }
         }
     }
+    @media(max-width: 500px){
+        .content{
+            .shop-title{
+                font-size: 1.5rem !important;
+            }
+        }
+    }
 }

@@ -1,7 +1,7 @@
 import Slider from "@components/slider/Slider";
 
 import "./style.scss"
-const ShopSlider = () => {
+const ShopSlider = ({items}) => {
    return (
       <div className="shop-slider">
          <div className="content container">
@@ -9,7 +9,7 @@ const ShopSlider = () => {
                جدید ترین محصولات فروشگاه
             </div>
             <div className="slider-container">
-               <Slider />
+               <Slider items={items}/>
             </div>
             <div className="show-more">
                <button>مشاهده همه محصولات</button>

@@ -5,8 +5,9 @@ import "./style.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import { Context } from "@container/Context";
+import Helper from "@container/helper";
 
-const Slider = () => {
+const Slider = ({items}) => {
 
     const [slider,setSlider]=useState(0)
 
@@ -16,8 +17,8 @@ const Slider = () => {
         let view=0,rem_to_move=0
         if(window_width>1200){view=2;rem_to_move=31}
         else{view=1;rem_to_move=20}
-        if(slider+side > 6-view) {
-           move_slider((6-view) * -1)
+        if(slider+side > items.length-view) {
+           move_slider((items.length-view) * -1)
            return
         }
         let element=document.querySelector(".show-all")
@@ -41,29 +42,29 @@ const Slider = () => {
                     />
                 </div>
                 <div className="show-all">
-                    {Array(6).fill(0).map((slide, index) =>
+                    {items.map((slide, index) =>
                         <div className="each-slide" key={index}>
                             <div className="slide-image">
                                 <div className="img">
-                                    <img src={`images/avatars/${index}.png`} alt="" />
+                                    <img src={`${Helper.BASE_URL}/files/${slide.image}`} alt={slide.name} />
                                 </div>
                             </div>
                             <div className="slide-info">
                                 <div className="title">
-                                    Lara Craft
+                                    {slide.name}
                                 </div>
                                 <div className="info">
                                     <div className="label">
                                         Category:
                                     </div>
                                     <div>
-                                        Game , Anime
+                                        {slide.categorys.toString()}
                                     </div>
                                     <div className="label">
                                         Price:
                                     </div>
                                     <div className="price">
-                                        12,000 TMN
+                                        {slide.price} MVC
                                     </div>
                                 </div>
                                 <div className="buttons">
@@ -72,7 +73,7 @@ const Slider = () => {
                                             icon={faShoppingCart}
                                         />
                                     </div>
-                                    <div className="open-avatar" onClick={()=>{context.setItem(2)}}>
+                                    <div className="open-avatar" onClick={()=>{context.setItem(slide)}}>
                                         مشاهده محصول
                                     </div>
                                 </div>

@@ -2,16 +2,26 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.scss"
 import { faAngleDown, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-const Shop = () => {
+import { useContext, useState } from "react";
+import { Context } from "@container/Context";
+import Image from "next/image";
+import Helper from "@container/helper";
+import _shop from "./shop";
+const Shop = ({ items }) => {
 
 
 
     const toggle_filter = (index) => {
         let elements = document.querySelectorAll(".each-filter")
-        // elements.forEach(element => element.classList.remove("active-filter"))
         elements[index].classList.toggle("active-filter")
     }
+
+
+    const add_to_cart = async (id) => {
+        const result = await _shop.add_to_cart(id)
+        if (result) context.setNavUpdater(prv => {return !prv})
+    }
+    const context = useContext(Context)
 
     const [filters, setFilters] = useState({
         persent: 5
@@ -157,29 +167,37 @@ const Shop = () => {
                         <div className="cart-container">
                             <div className="items-container">
 
-                                {Array(7).fill(0).map((e, index) =>
-                                    <div className="each-item">
+                                {items.map((item, index) =>
+                                    <div className="each-item" key={index}>
                                         <div className="img">
-                                            <img src={`/images/avatars/${index}.png`} alt="" />
+                                            {/* <img src={`/images/avatars/${index}.png`} alt="" /> */}
+                                            <Image
+                                                width={0}
+                                                height={0}
+                                                sizes="100%"
+                                                src={`${Helper.BASE_URL}/files/${item.image}`}
+                                                loading="lazy"
+                                                alt={item.name}
+                                            />
                                         </div>
                                         <div className="name">
-                                            Geralt of Rivia
+                                            {item.name}
                                         </div>
                                         <div className="info">
                                             <div className="categori">
-                                                Game , Anime
+                                                {item.categorys}
                                             </div>
                                             <div className="price">
-                                                30 MVC
+                                                {item.price} MVC
                                             </div>
                                         </div>
                                         <div className="buttons">
-                                            <div className="add-to-cart">
+                                            <div className="add-to-cart" onClick={() => { add_to_cart(item._id) }}>
                                                 <FontAwesomeIcon
                                                     icon={faShoppingCart}
                                                 />
                                             </div>
-                                            <div className="show-detile">
+                                            <div className="show-detile" onClick={() => { context.setItem(item) }}>
                                                 مشاهده کالا
                                             </div>
                                         </div>

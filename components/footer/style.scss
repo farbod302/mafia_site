@@ -27,4 +27,14 @@
             }
         }
     }
+    @media(max-width:500px){
+        .logo{
+            font-size: 1.7rem;
+        }
+        .media-content{
+            div{
+                font-size: 1.9rem !important;
+            }
+        }
+    }
 }

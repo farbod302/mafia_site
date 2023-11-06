@@ -26,6 +26,7 @@
         height: 100%;
         .counter-icon{
             margin: 2rem ;
+            font-size: 3rem;
         }
         .counter-num{
             font-size: 2rem;
@@ -34,6 +35,30 @@
         }
         .counter-title{
             font-size: 1.5rem;
+        }
+    }
+    @media(max-width:500px){
+        .title{
+            font-size: 1.3rem
+        }
+        .revolver{
+            .img{
+                width: 5rem;
+            }
+        }
+        .content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .counter-icon{
+                margin: 1rem;
+                font-size: 2rem;
+            }
+            .counter-num{
+                font-size: 1.3rem;
+            }
+            .counter-title{
+                font-size: 1rem;
+            }
         }
     }
 }

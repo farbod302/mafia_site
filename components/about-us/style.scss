@@ -1,0 +1,56 @@
+.about-us {
+    background-color: #000;
+    color: white;
+
+    .title {
+        padding: 1.5rem 0;
+        color: #dc2727;
+        font-size: 1.6rem;
+        border-bottom: 1px solid #dc2727;
+    }
+
+    .about-us-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .info {
+            padding: 1rem 0;
+            line-height: 2rem;
+
+            .links {
+                .each-link {
+                    display: flex;
+                    column-gap: 1rem;
+                    align-items: center;
+                    font-size: 1.3rem;
+                    color: #dc2727;
+                    line-height: 3rem;
+                }
+            }
+        }
+        .image{
+            display: grid;
+            place-items: center;
+        }
+    }
+
+    .team-info {
+        .label {
+            color: #dc2727;
+            padding: 1rem 0;
+            border-bottom: 1px solid #dc2727;
+            margin-bottom: 1rem;
+        }
+        .members{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            column-gap: 1rem;
+            line-height: 2rem;
+            .image{
+                border-radius: 0.3rem;
+                height: 15rem;
+                border: 1px solid #dc2727;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.auth{
+    min-height: calc(100vh - 3rem);
+    background-color: #000;
+    color: white;
+    display: grid;
+    place-items: center;
+    .content{
+        width: 100%;
+        max-width: 600px;
+        background-color: #1b1b1b;
+        height: 80vh;
+        border-radius: 0.3rem;
+        .title{
+            margin: 1rem;
+            text-align: center;
+            color: red;
+            font-size: 1.3rem;
+        }
+        .info{
+            line-height: 2rem;
+            padding: 0.5rem;
+        }
+    }
+}
+
+.back{
+    display: grid;;
+    place-items: center;
+    text-align: center;
+    margin: 2rem;
+}
