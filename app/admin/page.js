@@ -5,13 +5,15 @@ const admin = async () => {
 
     const items = await fetch(`${Helper.BASE_URL}/items/items_list`, { method: "GET", cache: "no-cache" })
     let items_json=await items.json()
+    const {items:i}=items_json
+    const res=[...i[0].items,...i[1].items]
    
 
    
 
     return (
         <div>
-            <Admin items={items_json.items}/>
+            <Admin items={res}/>
         </div>
     );
 }

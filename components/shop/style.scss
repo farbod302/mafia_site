@@ -160,5 +160,16 @@
 
         }
     }
+    @media(max-width:500px){
+        .content{
+            display: block;
+            .shop-main-container{
+                grid-template-columns: 1fr;
+            }
+            .items-container{
+                grid-template-columns: 1fr !important;
+            }
+        }
+    }
 
 }

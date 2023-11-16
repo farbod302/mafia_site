@@ -149,4 +149,14 @@
             }
         }
     }
+    @media(max-width: 500px){
+        background-size: 200% 100%;
+        background-position: center center;
+        .content{
+            .regist-cart{
+                width: unset;
+            }
+        }
+
+    }
 }

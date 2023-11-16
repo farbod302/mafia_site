@@ -1,8 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import { useSearchParams, useRouter } from 'next/navigation'
+
 import "./style.scss"
 import _socket from "./socket";
+import { toast } from "react-toastify";
 
 const LocalGame = () => {
 
@@ -10,7 +13,8 @@ const LocalGame = () => {
     const [stage, setStage] = useState(0)
     const [cart, setCart] = useState(null)
     const [deck, setDeck] = useState(null)
-
+    const searchParams = useSearchParams()
+    const navigate = useRouter()
 
     const show_cart = () => {
         const img = document.querySelector(".img")
@@ -19,6 +23,15 @@ const LocalGame = () => {
         }, 150)
         img.classList.toggle("rotate")
 
+    }
+
+
+    const connect_to_game = () => {
+        const game_id = searchParams.get("game_id") || null
+        if (!game_id) return toast.error("شناسه بازی نامعتبر است")
+        const name = document.querySelector(".name").value
+        if (!name) return toast.error("نام خود را وارد کنید")
+        _socket.connect_to_game(name,game_id,setStage)
     }
 
 
@@ -34,8 +47,18 @@ const LocalGame = () => {
                 <div className="main-content">
                     {stage === 0 ?
 
-                        <div>
-                            name
+                        <div className="name_input">
+                            <div className="label">
+                                نام خود را وارد کنید
+                            </div>
+                            <div className="input">
+                                <input type="text"  className="name"/>
+                            </div>
+                            <div className="button">
+                                <button onClick={connect_to_game}>
+                                    شروع بازی
+                                </button>
+                            </div>
                         </div>
 
 
@@ -47,7 +70,7 @@ const LocalGame = () => {
                             :
                             <div className="img rotate" onClick={show_cart}>
                                 {show ?
-                                    <div className="role">{cart}</div> :
+                                    <div className="role">{cart.name}</div> :
                                     <img src="/images/card.jpg" alt="" />
                                 }
 

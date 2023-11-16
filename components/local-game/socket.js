@@ -1,15 +1,18 @@
+import { toast } from "react-toastify"
+
 const { io } = require("socket.io-client")
 
 const _socket = {
-    connection(setDeck, setStage, setCart, game_id) {
-        const socket = io("http://192.168.1.107:4090")
+    connection(setDeck, setStage, setCart) {
+        const socket = io("http://185.44.112.9:4090")
         this.socket = socket
         socket.on("get_deck", ({ data }) => {
             setDeck(data)
         })
 
         socket.on("error", ({ data }) => {
-            alert(data.msg)
+            toast.error(data.msg)
+            setStage(0)
         })
 
         socket.on("cart", ({ data }) => {
@@ -20,9 +23,9 @@ const _socket = {
     },
 
     connect_to_game(name, game_id, setStage) {
-
+        if (!this.socket) return this.connect_to_game(name, game_id, setStage)
         this.socket.emit("handle_local_game", {
-            op: "join_game",
+            op: "join_local_game",
             data: {
                 name,
                 game_id

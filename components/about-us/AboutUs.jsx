@@ -20,7 +20,7 @@ const team = [
     {
         img: "",
         name: "مهدی آقامحمدی",
-        position: "تولید محتوا"
+        position: "تولید محتوا و دیزاین"
     },
     {
         img: "",

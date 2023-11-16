@@ -28,7 +28,8 @@
                 }
             }
         }
-        .image{
+
+        .image {
             display: grid;
             place-items: center;
         }
@@ -41,15 +42,43 @@
             border-bottom: 1px solid #dc2727;
             margin-bottom: 1rem;
         }
-        .members{
+
+        .members {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             column-gap: 1rem;
             line-height: 2rem;
-            .image{
+
+            .name {
+                padding: 1rem 0 0 0 ;
+            }
+
+            .image {
                 border-radius: 0.3rem;
                 height: 15rem;
                 border: 1px solid #dc2727;
+            }
+
+            .position {
+                color: gray;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    @media(max-width:500px) {
+        .about-us-content {
+            padding: 1rem 0.5rem;
+            grid-template-columns: 1fr;
+            .info {
+                grid-row: 2/3;
+            }
+        }
+        .team-info{
+            .members{
+                width: 80%;
+                margin: auto;
+                grid-template-columns: 1fr;
             }
         }
     }

@@ -4,6 +4,7 @@ import { faShoppingCart, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect, useState } from "react";
 import { Context } from "@container/Context";
 import Helper from "@container/helper";
+import {toast} from "react-toastify"
 const SelectedItem = () => {
 
 
@@ -17,10 +18,26 @@ const SelectedItem = () => {
     }
     useEffect(() => {
         const { item } = context
+        setRand([])
         fetch_random_items(item._id)
         setItem(item)
     }, [context.item])
 
+
+    const _add_to_cart=async ()=>{
+        let token = localStorage.getItem("token")
+        if (!token) return
+        const data = await Helper.server_post_request("user/add_to_cart", { item:context.item._id, token })
+        console.log(data.status);
+        if (!data || !data.status) return toast.error(data.msg)
+        context.setNavUpdater(prv => {return !prv})
+        toast.success("محصول به سبد خرید اضافه شد")
+        context.setItem(null)
+        document.querySelector("html").scroll({
+            top:0,
+            behavior:"smooth"
+        })
+    }
 
     return (
         <div className="selected-item">
@@ -64,7 +81,7 @@ const SelectedItem = () => {
                                 {item.price} MVC
                             </div>
                         </div>
-                        <div className="add-to-cart">
+                        <div className="add-to-cart" onClick={()=>{_add_to_cart()}}>
                             <FontAwesomeIcon
                                 icon={faShoppingCart}
                             />
@@ -74,8 +91,8 @@ const SelectedItem = () => {
                             کالا های مشاهبه
                         </div>
                         <div className="sugestion">
-                            {rend.map(item =>
-                                <div key={item.name} onClick={()=>{context.setItem(item)}}>
+                            {rend?.map(item =>
+                                <div key={item._id} onClick={()=>{context.setItem(item)}}>
                                     <div className="img">
                                         <img src={`${Helper.BASE_URL}/files/${item.image}`} alt="" />
                                     </div>

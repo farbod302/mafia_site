@@ -58,9 +58,9 @@ const Navbar = () => {
                                     style={{ fontSize: "1.3rem", color: "#fff" }}
                                 />
                             </li>
-                          <Link href={"/"}>  <li >صفحه اصلی</li></Link>
+                            <Link href={"/"}>  <li >صفحه اصلی</li></Link>
                             <Link href={"/shop"}><li>فروشگاه</li></Link>
-                          <Link href={"/about_us"}>  <li>درباره ما</li></Link>
+                            <Link href={"/about_us"}>  <li>درباره ما</li></Link>
                         </ul>
                     </div>
                     <div className="left">
@@ -76,20 +76,22 @@ const Navbar = () => {
                                 </div>
 
                                 <div className="cart">
-                                    <FontAwesomeIcon
-                                        icon={faShoppingCart}
-                                        style={{ fontSize: "1.3rem", color: "#fff" }}
-                                    />
-                                    <div className="cart_count">
-                                        {profile.cart}
-                                    </div>
+                                    <Link href={"/cart"}>
+                                        <FontAwesomeIcon
+                                            icon={faShoppingCart}
+                                            style={{ fontSize: "1.3rem", color: "#fff" }}
+                                        />
+                                        <div className="cart_count">
+                                            {profile.cart}
+                                        </div>
+                                    </Link>
                                 </div>
 
 
                             </div>
                             :
                             <Link href={"/registion"}>
-                            <div>ورود / ثبت نام</div>
+                                <div>ورود / ثبت نام</div>
                             </Link>
                         }
                     </div>
