@@ -26,6 +26,13 @@
             display: grid;
             border: 2px solid #dc2727;
             place-items: center;
+            max-height: 50rem;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
            
 
         }
@@ -66,14 +73,11 @@
             font-size: 1.4rem;
         }
         .content{
-            grid-template-columns: 1fr;
-            grid-template-columns: 1fr;
-            min-height: unset;
-            .main-image{
-                grid-column: 1/2;
-                grid-row: 1/2;
-            }
-            grid-gap: 1rem;
+           grid-template-columns: 1fr;
+           grid-template-rows: 1fr;
+           .main-image{
+            grid-column: 1/2;
+           }
 
         }
         .left{

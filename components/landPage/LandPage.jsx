@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faDownload, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 const LandPage = () => {
-    return ( 
+    return (
         <div className="lp">
             <div className="content container">
                 <div className="main-content">
                     <div className="title">
-                        مافیا ورس
+                        عصر مافیا
                     </div>
                     <div className="sub-title">
                         بازی جذاب مافیا با امکانات و شخصی سازی های فوق العاده هم اکنون رایگان در دسترس شماست
@@ -23,28 +23,14 @@ const LandPage = () => {
                     </div>
                     <div className="download-box">
                         <div className="each-download">
-                            <div className="icon">
-                            <FontAwesomeIcon
-                                icon={faShoppingBasket}
-                                style={{ fontSize: "2rem", color: "#dc2727" }}
-                            />
-                            </div>
-                            <div className="download-text">دانلود از بازار</div>
+                            <a target="_blank" href="https://myket.ir/app/ir.greendex.mafia?utm_source=search-ads-gift&utm_medium=cpc"><img src="https://myket.ir/core/images/logo/get2-fa-reflect-01.png" /> </a>
                         </div>
-                        <div className="each-download">
-                            <div className="icon">
-                            <FontAwesomeIcon
-                                icon={faDownload}
-                                style={{ fontSize: "2rem", color: "#dc2727" }}
-                            />
-                            </div>
-                            <div className="download-text">دانلود مستقیم</div>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-     );
+    );
 }
- 
+
 export default LandPage;

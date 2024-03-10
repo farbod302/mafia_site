@@ -1,0 +1,42 @@
+.result {
+    width: 100%;
+    margin: auto;
+    background-color: black;
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+    color: white;
+
+    .result-content {
+        max-width: 500px;
+
+        .logo {
+            display: grid;
+            place-items: center;
+
+            img {
+                width: 7rem;
+                height: 7rem;
+            }
+        }
+        .main-title{
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+        .sub-title{
+            text-align: center;
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+            button{
+                padding: 0.5rem 2rem;
+                color: white;
+                border-radius: 0.3rem;
+                background-color:red;
+                border: none;
+                margin-top: 2rem;
+            }
+        }
+    }
+}

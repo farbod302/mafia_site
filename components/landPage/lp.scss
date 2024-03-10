@@ -49,10 +49,12 @@
 
         .download-box {
             display: flex;
-
+            img{
+                width: 12rem;
+                height: auto;
+            }
             .each-download {
                 margin-left: 3rem;
-                border: 2px solid #dc2727;
                 height: max-content;
                 padding: 0.5rem 1rem;
                 border-radius: 0.4rem;
@@ -64,14 +66,6 @@
                     padding-left: 1rem;
                 }
 
-                &:hover {
-                    background-color: #dc2727;
-                    color: white;
-
-                    svg {
-                        color: white !important;
-                    }
-                }
             }
         }
     }

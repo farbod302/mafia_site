@@ -34,50 +34,50 @@ const Advanteg = () => {
                         بازی با دوستان
                     </div>
                     <div className="info">
-                        شما می توانید با دوستان خود بازی کنید یا گرداننده بازی دوستان خود باشید
+                        شما می توانید با دوستان خود یا اشخاص تصادفی به صورت آنلاین بازی کنید 
                     </div>
                 </div>
                 <div className="main-image">
-                        اسکرین شات از  بخش {active+1}
+                       <img src={`/images/screenshots/0${active+1}.jpg`} alt="" />
                 </div>
                 <div className="advanteg-text left">
                     <div className="label">
-                        عضویت در کانال
+                        بازی حضوری
                     </div>
                     <div className="info">
-                        میتوانید برای انجام بازی های دست جمعی,آشنایی با مافیا پلیر های جدید و یا شرکت در تورنومنت در کانال های مختلف عضو شوید
+                        شما می توانید از قابلیت مدیریت بازی حضوری برای دور همی های خود استفاده کنید
                     </div>
                 </div>
                 <div className="advanteg-text rigth">
+                    <div className="label">
+                        کانال صوتی پایدار
+                    </div>
+                    <div className="info">
+                        ارتباط صوتی پایدار بدون قطعی و تاخیر
+                    </div>
+                </div>
+                <div className="advanteg-text left">
+                    <div className="label">
+                       مینیمال و سبک
+                    </div>
+                    <div className="info">
+                        مناسب برای تمام گوشی های موبایل و پشتیبانی از تمامی سخت افزار ها
+                    </div>
+                </div>
+                <div className="advanteg-text rigth">
+                    <div className="label">
+                        احراز هویت سنی
+                    </div>
+                    <div className="info">
+                        دارای سیستم هومشمند تشخیص سن کاربران برای گروه بندی ماسب اشخاص برای بازی
+                    </div>
+                </div>
+                <div className="advanteg-text left">
                     <div className="label">
                         شخصی سازی های مختلف
                     </div>
                     <div className="info">
-                        ده ها آواتار و انیمیشن برای شما طراحی شده که میتوانید کارکتر بازی خود را شخصی سازی کنید
-                    </div>
-                </div>
-                <div className="advanteg-text left">
-                    <div className="label">
-                       طراحی آواتار اختصاصی
-                    </div>
-                    <div className="info">
-                        به درخواست شما تیم طراحی ما آماده شخصی سازی بازی برای شما به صورت انحساری و اختصاصی است
-                    </div>
-                </div>
-                <div className="advanteg-text rigth">
-                    <div className="label">
-                        گردانندگی حقیقی
-                    </div>
-                    <div className="info">
-                        علاوه بر گردانندگی توسط ربات شما قادر هستید بازی هایی را با گردانندگی شخص حقیقی تجربه کنید یا گرداننده بازی های پلیر های دیگر باشید و از بازی کسب درامد کنید!
-                    </div>
-                </div>
-                <div className="advanteg-text left">
-                    <div className="label">
-                        ورود به بازی های به عنوان بیننده
-                    </div>
-                    <div className="info">
-                        شما می توانید در بازی های مختلف به عنوان بیننده حضور داشته باشید و با دیگر بینندگان گفت و گو کنید
+                       تنوع بالای شخصی سازی مناسب برای هر سلیقه
                     </div>
                 </div>
                 

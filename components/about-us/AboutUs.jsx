@@ -27,6 +27,16 @@ const team = [
         name: "پیمان یوسفی",
         position: "مدیر پروژه"
     },
+    {
+        img: "",
+        name: "بهزاد احدی",
+        position: "صداپیشه"
+    },
+    {
+        img: "",
+        name: "علی داودی",
+        position: "کوچبنگ"
+    },
 
 ]
 
@@ -41,7 +51,7 @@ const AboutUs = () => {
                 <div className="about-us-content">
                     <div className="info">
                         این بازی توسط تیم Green verse طراحی و تقدیم شما شده است<br />
-                        تیم ما در حوضه های مختلف بلاک چین,کریپتو و بازی سازی فعالیت داشته و از سال 2019 فعالیت خود را شروع کرده<br />
+                        تیم ما از اواسط سال ۱۴۰۰ شروع به طراحی و برنامه نویسی این بازی کرده و در تاریخ یکم اسفند ۱۴۰۲ این بازی به انتشار رسید
                         راه های ارتباط با  مجموعه گرین ورس:<br />
                         <div className="links">
                             <div className="each-link">
@@ -50,9 +60,9 @@ const AboutUs = () => {
                                         icon={faGlobe}
                                     />
                                 </div>
-                                <div className="value">
+                                <a className="value" href="https://greenverse.ir" target="_blank">
                                     greenverse.ir
-                                </div>
+                                </a>
                             </div>
                             <div className="each-link">
                                 <div className="icon">
@@ -64,20 +74,11 @@ const AboutUs = () => {
                                     support@greenverse.ir
                                 </div>
                             </div>
-                            <div className="each-link">
-                                <div className="icon">
-                                    <FontAwesomeIcon
-                                        icon={faPhone}
-                                    />
-                                </div>
-                                <div className="value">
-                                    0243-533-4343
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                     <div className="image">
-                        some image
+                        <img src="/images/green.png" alt="" />
                     </div>
                 </div>
                 <div className="team-info">
@@ -85,12 +86,12 @@ const AboutUs = () => {
                         معرفی اعضا
                     </div>
                     <div className="members">
-                        {team.map(member => {
+                        {team.map((member,index) => {
                             const { name, image, position } = member
                             return (
                                 <div className="each-member">
                                     <div className="image">
-                                        {image}
+                                        <img src={`/images/about-us/${index}.jpg`} alt="" />
                                     </div>
                                     <div className="name">
                                         {name}

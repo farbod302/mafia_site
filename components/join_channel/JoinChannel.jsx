@@ -20,13 +20,13 @@ const JoinChannel = ({ channel_data }) => {
             <div className={style.container}>
                 <div className={style.content}>
                 <div className="title">
-                    Mafia verse
+                    Age of Mafia
                 </div>
                 <div className="chanel-avatar img">
                     <img src="https://static.theprint.in/wp-content/uploads/2021/06/binary-5137356_1280.jpg?compress=true&quality=80&w=376&dpr=2.6"/>
                 </div>
                 <div className="dis">
-                    شما به کانال <span>{channel_data.channel_id}</span> در بازی مافیاورس دعوت شدید<br/>
+                    شما به کانال <span>{channel_data.channel_id}</span> در بازی عصر مافیا دعوت شدید<br/>
                     برای عضویت در این کانال مراحل ثبت نام را ادامه دهید
                 </div>
 

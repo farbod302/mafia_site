@@ -7,6 +7,7 @@ import "./style.scss"
 import AddItem from "./pages/AddItem"
 import Transactions from "./pages/Transactions"
 import ShopTr from "./pages/Shops"
+import Charts from "@components/charts/Charts"
 const Admin = ({ items }) => {
     const router = useRouter()
     const [auth, setAuth] = useState(false)
@@ -43,7 +44,8 @@ const Admin = ({ items }) => {
     const stages = [
         <AddItem items={items} />,
         <ShopTr />,
-        <Transactions />
+        <Transactions />,
+        <Charts/>
     ]
     if (!auth) return <div>Auth...</div>
     return (
@@ -54,6 +56,7 @@ const Admin = ({ items }) => {
                         <li className="nav-list" >افزودن آیتم</li>
                         <li className="nav-list">فروش آیتم</li>
                         <li className="nav-list">فروش سکه</li>
+                        <li className="nav-list" onClick={()=>{setPage(3)}}>مدیریت منابع</li>
                     </ul>
                 </div>
             </div>

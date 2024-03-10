@@ -65,10 +65,10 @@ const Navbar = () => {
                     </div>
                     <div className="left">
                         {profile ?
-                            <div className="nav-info">
+                            <div className="nav-info" onClick={toggle_nav}>
 
 
-                                <div className="coin" onClick={() => router.push("/gold")}>
+                                <div className="coin" >
                                     {profile.gold} MVC   <FontAwesomeIcon
                                         icon={faCoins}
                                         style={{ fontSize: "1.3rem", color: "#d44848" }}
@@ -90,7 +90,7 @@ const Navbar = () => {
 
                             </div>
                             :
-                            <Link href={"/registion"}>
+                            <Link href={"/registion"} onClick={toggle_nav}>
                                 <div>ورود / ثبت نام</div>
                             </Link>
                         }

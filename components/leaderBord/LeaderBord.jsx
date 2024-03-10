@@ -1,8 +1,34 @@
+"use client"
 import { faChessKing } from "@fortawesome/free-solid-svg-icons";
 import "./style.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
+import Helper from "@container/helper";
 
 const LeaderBord = () => {
+
+    const [board, setBoard] = useState([])
+
+    const get_leader_board = async () => {
+        const {data} = await Helper.server_get_request("ranking")
+        const {ranking}=data
+        const clean_ranking=ranking.map(user=>{
+            const {idenity,ranking:user_ranking,win,lose,avatar,session_rank}=user
+            return {
+                name:idenity,
+                score:user_ranking.rank,
+                cnt:win+lose,
+                avatar:avatar.avatar
+            }
+        })
+        setBoard(clean_ranking)
+    }
+
+    useEffect(() => {
+        get_leader_board()
+    }, [])
+
+
     return (
         <div className="leader-bord">
             <div className="content container">
@@ -13,7 +39,7 @@ const LeaderBord = () => {
                             <div>
                                 <FontAwesomeIcon
                                     icon={faChessKing}
-                                    style={{fontSize:30}}
+                                    style={{ fontSize: 30 }}
                                 />
                             </div>
                             <div>مشاهده همه ...</div>
@@ -26,17 +52,17 @@ const LeaderBord = () => {
                                 <li>امتیاز</li>
                                 <li>تعدادبازی</li>
                             </ul>
-                            {Array(10).fill(0).map((player, index) =>
+                            {board.map((player, index) =>
                                 <ul key={index} className="each-player each-player-list">
                                     <li>{index + 1}</li>
                                     <li>
                                         <div className="img">
-                                            <img src={index <= 6 ? `images/avatars/${index}.png` : "/images/mafia.png"} alt="" />
+                                            <img src={`${Helper.BASE_URL}/${player.avatar}`} alt="" />
                                         </div>
                                     </li>
-                                    <li>فربود علی اکبری</li>
-                                    <li className="score">1856</li>
-                                    <li className="score">345</li>
+                                    <li>{player.name.slice(0,15)}</li>
+                                    <li className="score">{player.score}</li>
+                                    <li className="score">{player.cnt}</li>
                                 </ul>
                             )}
                         </div>

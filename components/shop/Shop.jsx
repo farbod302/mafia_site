@@ -34,7 +34,7 @@ const Shop = ({ items }) => {
                     فروشگاه
                 </div>
                 <div className="shop-main-container">
-                    <div className="filters">
+                    {/* <div className="filters">
                         <div className="cart-container">
                             <div className="sub-title">
                                 فیلتر ها
@@ -162,7 +162,7 @@ const Shop = ({ items }) => {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="items">
                         <div className="cart-container">
                             <div className="items-container">

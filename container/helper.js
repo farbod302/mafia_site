@@ -1,7 +1,8 @@
 
 const Helper = {
-    BASE_URL: "https://mafia.altf1.ir:4090",
-    // BASE_URL: "http://185.44.112.9:4090",
+    // BASE_URL: "http://mafia.altf1.ir:4090",
+    BASE_URL: "https://mafia.gamingverse.ir",
+    // BASE_URL: "http://localhost:4090",
     async server_get_request(path) {
         const  data  = await fetch(`${this.BASE_URL}/${path}`, {
             method: "GET"

@@ -7,10 +7,6 @@ const admin = async () => {
     let items_json=await items.json()
     const {items:i}=items_json
     const res=[...i[0].items,...i[1].items]
-   
-
-   
-
     return (
         <div>
             <Admin items={res}/>

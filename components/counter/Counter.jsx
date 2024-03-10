@@ -44,7 +44,7 @@ const Counter = ({ counter_data }) => {
         <div className="counter" onMouseMove={(e)=>{route_image(e)}}>
             <div className="container ">
                 <div className="title">
-                    به جمع مافیاورس بپیوندید
+                    به جمع عصر مافیا بپیوندید
                 </div>
                 <div className="revolver">
                     <div className="img">
