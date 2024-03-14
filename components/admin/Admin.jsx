@@ -53,9 +53,9 @@ const Admin = ({ items }) => {
             <div className="admin-nav">
                 <div className="container">
                     <ul>
-                        <li className="nav-list" >افزودن آیتم</li>
-                        <li className="nav-list">فروش آیتم</li>
-                        <li className="nav-list">فروش سکه</li>
+                        <li className="nav-list" onClick={()=>{setPage(0)}}>افزودن آیتم</li>
+                        <li className="nav-list" onClick={()=>{setPage(1)}}>مدیریت آواتار اختصاصی</li>
+                        <li className="nav-list" onClick={()=>{setPage(2)}}>فروش سکه</li>
                         <li className="nav-list" onClick={()=>{setPage(3)}}>مدیریت منابع</li>
                     </ul>
                 </div>
